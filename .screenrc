@@ -1,0 +1,52 @@
+# ~/.screenrc
+
+# no annoying audible bell
+vbell off
+
+# detach on hangup
+autodetach on
+
+# Use UTF-8
+defutf8 on
+
+# Use backtick for prefix key instead of Ctrl-A
+# escape ``
+
+# don't display the copyright page
+startup_message off
+
+# make the shell in every window a login shell
+shell -$SHELL
+
+# set up customized screen names
+screen -t zero 0
+screen -t two 2
+screen -t three 3
+screen -t four 4
+#screen -t five 5
+#screen -t six 6
+#screen -t seven 7
+#screen -t eight 8
+#screen -t nine 9
+screen -t one 1
+
+# enable support for the "alternate screen" capability in all windows
+altscreen on
+
+# enable 256 color screen
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on"
+
+# enable better scrolling
+#termcapinfo xterm* ti@:te@
+
+# scrollback 10000 lines
+scrollback 10000
+
+# status bar
+caption always "%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %m/%d %c ]%{W}"
