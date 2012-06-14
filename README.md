@@ -1,0 +1,1 @@
+This is a repository containing useful configurations for programs I use.
