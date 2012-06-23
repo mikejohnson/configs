@@ -68,11 +68,13 @@ set nowb
 set noswapfile
 
 " Persistent undo
+if version >= 703
 try
    set undodir=~/.vim_runtime/undodir
    set undofile
 catch
 endtry
+endif
 
 """"""""""""""""""""""""""
 " Text, tabs and indents "
@@ -97,5 +99,7 @@ set textwidth=100 " Set text width "
 """""""""""
 
 " Folds "
+if version >= 703
 set foldmethod=marker
 set foldopen=hor,mark,search,tag,undo
+endif
