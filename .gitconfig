@@ -4,7 +4,6 @@
 [push]
 	default = current
 [color]
-	diff = auto
-	status = auto
+	ui = auto
 [alias]
 	wdiff = diff --word-diff
