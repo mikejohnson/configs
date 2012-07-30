@@ -27,7 +27,7 @@ set encoding=utf8
 " fdm (fold marker type)
 iab VIMM <C-R>="// vim:ts=4:sw=4:et:tw=100:fdm=marker:"
 
-iab /** /**<CR> *<CR>*/
+iab /*** /**<CR> *<CR>*/
 
 """"""""""""""""""
 " User Interface "
