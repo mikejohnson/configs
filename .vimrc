@@ -9,12 +9,25 @@
 """""""""""
 " General "
 """""""""""
-set history=700 " Set history buffer
+" Set history buffer
+set history=1000
 
+" Set default encoding to UTF-8
 set encoding=utf8
 
-" Don't let files override my settings
+"""""""""""""""""
+" Abbreviations "
+"""""""""""""""""
+
+" set the vim interpretation line
+" ts 4 (replace tabs with 4 spaces)
+" sw 4 (shift width, indentation when using  >>)
+" et
+" tw (line length before breaking)
+" fdm (fold marker type)
 iab VIMM <C-R>="// vim:ts=4:sw=4:et:tw=100:fdm=marker:"
+
+iab /** /**<CR> *<CR>*/
 
 """"""""""""""""""
 " User Interface "
