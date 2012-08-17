@@ -1,9 +1,11 @@
 [user]
-	name = Mike Johnson
-	email = mike@danger6.com
+    name = Mike Johnson
+    email = mike@danger6.com
 [push]
-	default = current
+    default = current
 [color]
-	ui = auto
+    ui = auto
 [alias]
-	wdiff = diff --word-diff
+    wdiff = diff --word-diff
+    logg = log --graph --pretty=format:'%C(yellow)%h%Creset - %s %Cgreen(%cr)%C(bold blue)%d%Creset'
+    logc = log --graph --pretty=format:'%C(yellow)%h%Creset - %s%n  %an %Cgreen(%cr)%C(bold blue)%d%Creset%n'
