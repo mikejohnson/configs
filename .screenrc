@@ -18,18 +18,6 @@ startup_message off
 # make the shell in every window a login shell
 shell -$SHELL
 
-# set up customized screen names
-screen -t zero 0
-screen -t two 2
-screen -t three 3
-screen -t four 4
-#screen -t five 5
-#screen -t six 6
-#screen -t seven 7
-#screen -t eight 8
-#screen -t nine 9
-screen -t one 1
-
 # enable support for the "alternate screen" capability in all windows
 altscreen on
 
@@ -50,3 +38,15 @@ defscrollback 10000
 
 # status bar
 caption always "%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %m/%d %c ]%{W}"
+
+# set up customized screen names
+screen -t zero 0
+screen -t two 2
+screen -t three 3
+screen -t four 4
+#screen -t five 5
+#screen -t six 6
+#screen -t seven 7
+#screen -t eight 8
+#screen -t nine 9
+screen -t one 1
