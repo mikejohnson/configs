@@ -36,10 +36,16 @@ defbce "on"
 # scrollback 10000 lines
 defscrollback 10000
 
-# status bar
-caption always "%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %m/%d %c ]%{W}"
+# status bar with host, windows, load and date/time
+#caption always "%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %m/%d %c ]%{W}"
 
-# set up customized screen names
+# status bar with windows, host and date/time
+#caption always "%{gk}[%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}]%{=b C}[ %H %m/%d %c ]%{W}"
+
+# status bar aligned right with windows and host aligned left
+caption always "%{gk}[ %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{= G}%H %{g}]%{W}"
+
+# pre-create windows with customized names
 screen -t zero 0
 screen -t two 2
 screen -t three 3
