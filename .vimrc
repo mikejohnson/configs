@@ -19,14 +19,19 @@ set encoding=utf8
 " Abbreviations "
 """""""""""""""""
 
-" set the vim interpretation line
+" general php interpretation abbreviation
 " ts 4 (replace tabs with 4 spaces)
 " sw 4 (shift width, indentation when using  >>)
 " et
 " tw (line length before breaking)
 " fdm (fold marker type)
-iab VIMM <C-R>="// vim:ts=4:sw=4:et:tw=100:fdm=marker:"
+iab VIMP <C-R>="// vim:ts=4:sw=4:et:tw=100:fdm=marker:"
 
+" nodejs abbreviation
+iab VIMN <C-R>="// vim:et:sw=2:ts=2:sts=2:"
+"iab VIMN <C-R>="// vim:ts=2:sw=2:et:tw=80:"
+
+" comment block abbreviation
 iab /*** /**<CR> *<CR>*/
 
 """"""""""""""""""
@@ -108,6 +113,9 @@ set nowrap " Dont wrap lines
 
 set textwidth=100 " Set text width
 
+set colorcolumn=-19,+1 " Set visual line indicator
+"set colorcolumn=81,101
+
 " Sets visible chars for whitespace
 " ASCII tab: 187,160 trail: 183 extends: 133
 set list listchars=tab:» ,trail:·,extends:…
@@ -124,9 +132,9 @@ set foldmethod=marker
 set foldopen=hor,mark,search,tag,undo
 endif
 
-""""""""
-" Tabs "
-""""""""
+"""""""""""""""""""
+" Vim Editor Tabs "
+"""""""""""""""""""
 
 if has('gui')
   set guioptions-=e
