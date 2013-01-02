@@ -85,14 +85,11 @@ set nowb
 set noswapfile
 
 " Persistent undo
-if version >= 703
-try
-   " E518: Unknown option: undodir=~/.vim_runtime/undodir
-   set undodir=~/.vim_runtime/undodir
-   " E518: Unknown option: undofile
-   set undofile
-catch
-endtry
+if exists('+undodir')
+    set undodir=~/.vim_runtime/undodir
+endif
+if exists('+undofile')
+    set undofile
 endif
 
 """"""""""""""""""""""""""
@@ -113,8 +110,12 @@ set nowrap " Dont wrap lines
 
 set textwidth=100 " Set text width
 
-set colorcolumn=-19,+1 " Set visual line indicator
-"set colorcolumn=81,101
+" Set visual line indicator
+if exists('+colorcolumn')
+    set colorcolumn=-19,+1  " relative to textwidth
+    "set colorcolumn=81,101 " absolute
+endif
+
 
 " Sets visible chars for whitespace
 " ISO 8859-1 Latin-1: 187,160 trail: 155(183) extends: 133
@@ -125,11 +126,12 @@ set list listchars=tab:» ,trail:›,extends:…
 """""""""""
 
 " Folds
-if version >= 703
-" E518: Unknown option: foldmethod=marker
-set foldmethod=marker
-" E518: Unknown option: foldopen=hor,mark,search,tag,undo
-set foldopen=hor,mark,search,tag,undo
+if exists('+foldmethod')
+    " E518: Unknown option: foldmethod=marker
+    set foldmethod=marker
+endif
+if exists('+foldopen')
+    set foldopen=hor,mark,search,tag,undo
 endif
 
 """""""""""""""""""
