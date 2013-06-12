@@ -46,10 +46,10 @@ defscrollback 10000
 caption always "%{gk}[ %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{= G}%H %{g}]%{W}"
 
 # pre-create windows with customized names
-screen -t zero 0
+screen -t sys 0
 screen -t two 2
-screen -t three 3
-screen -t four 4
+#screen -t three 3
+#screen -t four 4
 #screen -t five 5
 #screen -t six 6
 #screen -t seven 7

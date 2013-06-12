@@ -34,6 +34,13 @@ iab VIMN <C-R>="// vim:et:sw=2:ts=2:sts=2:"
 " comment block abbreviation
 iab /*** /**<CR> *<CR>*/
 
+""""""""""""
+" Synonyms "
+""""""""""""
+
+"syntax match debugTodo /DEBUG/
+"hi def link debugTodo Todo
+
 """"""""""""""""""
 " User Interface "
 """"""""""""""""""
@@ -85,11 +92,14 @@ set nowb
 set noswapfile
 
 " Persistent undo
-if exists('+undodir')
-    set undodir=~/.vim_runtime/undodir
-endif
-if exists('+undofile')
-    set undofile
+if version >= 703
+try
+   " E518: Unknown option: undodir=~/.vim_runtime/undodir
+   set undodir=~/.vim_runtime/undodir
+   " E518: Unknown option: undofile
+   set undofile
+catch
+endtry
 endif
 
 """"""""""""""""""""""""""
@@ -110,12 +120,8 @@ set nowrap " Dont wrap lines
 
 set textwidth=100 " Set text width
 
-" Set visual line indicator
-if exists('+colorcolumn')
-    set colorcolumn=-19,+1  " relative to textwidth
-    "set colorcolumn=81,101 " absolute
-endif
-
+set colorcolumn=-19,+1 " Set visual line indicator
+"set colorcolumn=81,101
 
 " Sets visible chars for whitespace
 " ISO 8859-1 Latin-1: 187,160 trail: 155(183) extends: 133
@@ -126,12 +132,11 @@ set list listchars=tab:» ,trail:›,extends:…
 """""""""""
 
 " Folds
-if exists('+foldmethod')
-    " E518: Unknown option: foldmethod=marker
-    set foldmethod=marker
-endif
-if exists('+foldopen')
-    set foldopen=hor,mark,search,tag,undo
+if version >= 703
+" E518: Unknown option: foldmethod=marker
+set foldmethod=marker
+" E518: Unknown option: foldopen=hor,mark,search,tag,undo
+set foldopen=hor,mark,search,tag,undo
 endif
 
 """""""""""""""""""
@@ -186,4 +191,11 @@ if exists("+showtabline")
   map    <C-S-Tab>  :tabprev<CR>
   imap   <C-S-Tab>  <C-O>:tabprev<CR>
 endif
+
+"""""""""""""""""""
+" Code Completion "
+"""""""""""""""""""
+
+"filetype plugin on
+"set ofu=syntaxcomplete#Complete
 
