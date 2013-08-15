@@ -120,8 +120,10 @@ set nowrap " Dont wrap lines
 
 set textwidth=100 " Set text width
 
-set colorcolumn=-19,+1 " Set visual line indicator
-"set colorcolumn=81,101
+if exists('+colorcolumn')
+    set colorcolumn=-19,+1 " Set visual line indicator
+    "set colorcolumn=81,101
+endif
 
 " Sets visible chars for whitespace
 " ISO 8859-1 Latin-1: 187,160 trail: 155(183) extends: 133
