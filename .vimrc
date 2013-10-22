@@ -135,7 +135,7 @@ endif
 " ISO 8859-1 Latin-1: 187,160 trail: 155(183) extends: 133
 set list listchars=tab:» ,trail:›,extends:…
 
-set backspace=2 " Make backspace work in Insert mode
+set backspace=indent,eol,start " Backspace behavior in Insert mode
 
 """""""""""
 " Folding "
