@@ -1,0 +1,3 @@
+# Colorize prompt
+export PS1="\e[0;37m[\e[m\e[0;32m\u\e[m\e[0;37m@\e[m\e[1;34m\H\e[m \e[1;30m\W\e[m]\$ "
+
