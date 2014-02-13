@@ -1,3 +1,9 @@
 # Colorize prompt
+# green user on blue server
 export PS1="\e[0;37m[\e[m\e[0;32m\u\e[m\e[0;37m@\e[m\e[1;34m\H\e[m \e[1;30m\W\e[m]\$ "
 
+# green user on red server
+#export PS1="\e[0;37m[\e[m\e[0;32m\u\e[m\e[0;37m@\e[m\e[0;31m\h\e[m \e[1;30m\W\e[m]\$ "
+
+# bright red user on red server
+#export PS1="\e[0;37m[\e[m\e[1;31m\u\e[m\e[0;37m@\e[m\e[0;31m\H\e[m \e[1;30m\W\e[m]\$ "
