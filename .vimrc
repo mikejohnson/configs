@@ -63,96 +63,96 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 set number " Show line numbers
+set ruler " Always show ruler
 
 set scrolljump=5 " Cursor jump for vertical scrolling
 set scrolloff=3 " Cursor width for vertical scrolling
 
-set wildmenu " Turn on WiLd menu
-set ruler " Always show ruler
-
 set cmdheight=2 " The command bar height
 set showtabline=2 " The tab bar height
 
-set ignorecase " Ignore case when searching
-set smartcase
-
-set hlsearch " Highlight search terms
-set incsearch " Makes search act like modern search
-" This unsets the "last search pattern" register by hitting return
-nnoremap <CR> :noh<CR><CR>
+set wildmenu " Turn on WiLd menu (oneline tab completion menu)
 
 set showmatch " Show matching brackets when highlighted
 
-" No sound on errors
+"""""""""
+" Bells "
+"""""""""
 set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
+set novisualbell " Disable visual bell
+set t_vb= " Disable visual bell code
 
-"""""""""""""""""""""""""""
-" Files, backups and undo "
-"""""""""""""""""""""""""""
+"set to=500 " Timeout set to 0.5 sec
+
+""""""""""
+" Search "
+""""""""""
+set ignorecase " Ignore case when searching
+set smartcase
+set hlsearch " Highlight search terms
+set incsearch " Makes search act like modern search
+
+" This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
+""""""""""""""""""""
+" Backups and Undo "
+""""""""""""""""""""
 " Turn backup files off
 set nobackup
 set nowb
 set noswapfile
 
 " Persistent undo
-if version >= 703
-try
-   " E518: Unknown option: undodir=~/.vim_runtime/undodir
+if exists('+persistent_undo')
    set undodir=~/.vim_runtime/undodir
-   " E518: Unknown option: undofile
    set undofile
-catch
-endtry
 endif
 
-""""""""""""""""""""""""""
-" Text, tabs and indents "
-""""""""""""""""""""""""""
+""""""""""""""""""""
+" Tabs and Indents "
+""""""""""""""""""""
 set expandtab
 set shiftwidth=4
 set tabstop=4
 set smarttab
 
-" Set linebreaks
-set lbr
-set tw=500
-
 set autoindent " Auto indent
 set smartindent " Smart indent
-set nowrap " Dont wrap lines
-
-set textwidth=100 " Set text width
-
-if exists('+colorcolumn')
-    set colorcolumn=-19,+1 " Set visual line indicator
-    "set colorcolumn=81,101
-endif
 
 " Sets visible chars for whitespace
 " ISO 8859-1 Latin-1: 187,160 trail: 155(183) extends: 133
 set list listchars=tab:» ,trail:›,extends:…
 
+"""""""""""""""
+" Line Breaks "
+"""""""""""""""
+set textwidth=0 " Set text width (100 for autobreak, 0 for none)
+set nowrap " Dont wrap lines
+set linebreak " Doesn't work when list is set
+
 set backspace=indent,eol,start " Backspace behavior in Insert mode
+
+"""""""""""""""""""""
+" Visual Indicators "
+"""""""""""""""""""""
+" Set visual column width indicator
+if exists('+colorcolumn')
+    "set colorcolumn=-19,+1 " relative values (when textwidth set)
+    set colorcolumn=81,101 " absolute values (when textwidth not set)
+endif
 
 """""""""""
 " Folding "
 """""""""""
-
-" Folds
-if version >= 703
-" E518: Unknown option: foldmethod=marker
-set foldmethod=marker
-" E518: Unknown option: foldopen=hor,mark,search,tag,undo
-set foldopen=hor,mark,search,tag,undo
+if exists('+folding')
+    set foldmethod=marker
+    set foldopen=hor,mark,search,tag,undo
 endif
 
 """""""""""""""""""
 " Vim Editor Tabs "
 """""""""""""""""""
-
 if has('gui')
   set guioptions-=e
 endif
