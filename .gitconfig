@@ -8,4 +8,5 @@
 [alias]
     wdiff = diff --word-diff
     logg = log --graph --pretty=format:'%C(yellow)%h%Creset - %s %Cgreen(%cr)%C(bold blue)%d%Creset'
-    logc = log --graph --pretty=format:'%C(yellow)%h%Creset - %s%n  %an %Cgreen(%cr)%C(bold blue)%d%Creset%n'
+    logc = log --graph --pretty=format:'%C(yellow)%h %Cgreen(%cr)%C(blue bold)%d%C(black bold) - %Creset%an%n%C(black bold)%s%Creset%n'
+    logd = log --graph --pretty=format:'%C(yellow)%h %Cgreen(%cr)%C(blue bold)%d%C(black bold) - %Creset%an %C(black bold)<%ae>%n%C(black bold)%s%Creset%n'
