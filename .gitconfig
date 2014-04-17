@@ -1,6 +1,8 @@
 [user]
     name = Mike Johnson
     email = mike@danger6.com
+[core]
+    editor = vim
 [push]
     default = current
 [color]
