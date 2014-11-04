@@ -20,22 +20,21 @@ set encoding=utf8
 """""""""""""""""
 
 " Formatting Reference
-" ts 4 (replace tabs with 4 spaces)
-" sw 4 (shift width, indentation when using  >>)
 " et (expand tab)
-" tw (line length before breaking)
 " fdm (fold marker type)
 " sts (soft tab stop, backspace treats 4 spaces as tab)
+" sw 4 (shift width, indentation when using  >>)
+" ts 4 (replace tabs with 4 spaces)
+" tw (line length before breaking)
 
 " php interpretation abbreviation
-iab VIMPHP <C-R>="// vim:ts=4:sw=4:et:tw=100:fdm=marker:"
+iab VIMPHP <C-R>="// vim:et:fdm=marker:sts=4:sw=4:ts=4:tw=100"
 
 " python interpretation abbreviation
 iab VIMPY <C-R>="# vim:et:fdm=marker:sts=4:sw=4:ts=4"
 
-" nodejs abbreviation
-iab VIMNODE <C-R>="// vim:et:sw=2:ts=2:sts=2:"
-"iab VIMNODE <C-R>="// vim:ts=2:sw=2:et:tw=80:"
+" javascript abbreviation
+iab VIMJS <C-R>="// vim:et:fdm=marker:sts=4:sw=4:ts=4:tw=80"
 
 " php comment block abbreviation
 iab /*** /**<CR> *<CR>*/
