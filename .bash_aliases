@@ -1,3 +1,6 @@
+# Alias tmux for 256 color support
+alias tmux="tmux -2"
+
 # Colorize prompt
 CLEAR="\[\e[0m\]"
 RED="\[\e[0;31m\]"
