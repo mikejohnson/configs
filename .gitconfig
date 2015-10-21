@@ -1,6 +1,6 @@
 [user]
-    name = Mike Johnson
-    email = mike@danger6.com
+    name = $NAME
+    email = $EMAIL
 [core]
     editor = vim
 [push]
