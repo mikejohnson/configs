@@ -137,8 +137,8 @@ set backspace=indent,eol,start " Backspace behavior in Insert mode
 """""""""""""""""""""
 " Set visual column width indicator
 if exists('+colorcolumn')
-    "set colorcolumn=-19,+1 " relative values (when textwidth set)
-    set colorcolumn=81,101 " absolute values (when textwidth not set)
+    "set colorcolumn=-20,+0 " relative values (when textwidth set)
+    set colorcolumn=80,100 " absolute values (when textwidth not set)
 endif
 
 """""""""""
